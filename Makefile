@@ -6,7 +6,7 @@
 #    By: wkorande <wkorande@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/15 15:22:37 by wkorande          #+#    #+#              #
-#    Updated: 2019/12/01 17:15:59 by wkorande         ###   ########.fr        #
+#    Updated: 2019/12/01 17:41:36 by wkorande         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,17 +23,17 @@ LIBINCL	= include
 all: $(NAME)
 
 $(NAME):
-	make -C $(LIBFOLDER)
-	make clean -C $(LIBFOLDER)
-	gcc -o $(NAME) -I $(INCL) -I $(LIBFOLDER)/$(LIBINCL) $(SRCS) -L$(LIBFOLDER) -lftprintf
+	@make -C $(LIBFOLDER)
+	@make clean -C $(LIBFOLDER)
+	@gcc -o $(NAME) -I $(INCL) -I $(LIBFOLDER)/$(LIBINCL) $(SRCS) -L$(LIBFOLDER) -lftprintf
 
 clean:
-	make clean -C $(LIBFOLDER)
-	rm -f *.o
+	@make clean -C $(LIBFOLDER)
+	@rm -f *.o
 
 fclean: clean
-	make fclean -C $(LIBFOLDER)
-	rm -f $(NAME)
+	@make fclean -C $(LIBFOLDER)
+	@rm -f $(NAME)
 
 re: fclean all
 

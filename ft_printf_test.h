@@ -6,7 +6,7 @@
 /*   By: wkorande <wkorande@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/01 15:42:43 by wkorande          #+#    #+#             */
-/*   Updated: 2019/12/01 17:07:36 by wkorande         ###   ########.fr       */
+/*   Updated: 2019/12/01 17:38:59 by wkorande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ do\
 	if (!(test))\
 	{\
 		int r = printf("\n\t%s%s%s", GRAYWHITE, res, NORMAL);\
-		printf("%*s[FAIL]%s\n", 51-len, RED, NORMAL);\
+		printf("%*s[KO]%s\n", 50-len, RED, NORMAL);\
 		return (0);\
 	}\
 	else\
