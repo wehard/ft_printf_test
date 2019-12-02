@@ -6,7 +6,7 @@
 #    By: wkorande <wkorande@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/15 15:22:37 by wkorande          #+#    #+#              #
-#    Updated: 2019/12/01 17:41:36 by wkorande         ###   ########.fr        #
+#    Updated: 2019/12/02 14:55:20 by wkorande         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,10 +22,12 @@ LIBINCL	= include
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): lib
+	@gcc -o $(NAME) -I $(INCL) -I $(LIBFOLDER)/$(LIBINCL) $(SRCS) -L$(LIBFOLDER) -lftprintf
+
+lib:
 	@make -C $(LIBFOLDER)
 	@make clean -C $(LIBFOLDER)
-	@gcc -o $(NAME) -I $(INCL) -I $(LIBFOLDER)/$(LIBINCL) $(SRCS) -L$(LIBFOLDER) -lftprintf
 
 clean:
 	@make clean -C $(LIBFOLDER)
@@ -37,4 +39,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all lib clean fclean re

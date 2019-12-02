@@ -6,7 +6,7 @@
 /*   By: wkorande <wkorande@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 19:55:47 by wkorande          #+#    #+#             */
-/*   Updated: 2019/12/01 17:39:12 by wkorande         ###   ########.fr       */
+/*   Updated: 2019/12/02 16:21:59 by wkorande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,6 +159,38 @@ int	test_d(char *format, double d)
 	return (0);
 }
 
+int	test_percent(char *format, long long i)
+{
+	int		r1;
+	int		r2;
+	char	p[1024];
+
+	SET_COLOR(BLUE);
+	ft_printf("%%:\t");
+	r1 = sprintf(p, format, i);
+	SET_COLOR(WHITEBLACK);
+	r2 = ft_printf(format, i);
+	SET_COLOR(NORMAL);
+	w_assert(r2, p, r1 == r2);
+	return (0);
+}
+
+int	test_strange(char *format, char *str)
+{
+	int		r1;
+	int		r2;
+	char	p[1024];
+
+	SET_COLOR(BLUE);
+	ft_printf("%%:\t");
+	r1 = sprintf(p, format, str);
+	SET_COLOR(WHITEBLACK);
+	r2 = ft_printf(format);
+	SET_COLOR(NORMAL);
+	w_assert(r2, p, r1 == r2);
+	return (0);
+}
+
 int	main(void)
 {
 	int a;
@@ -179,5 +211,7 @@ int	main(void)
 	test_x("%X", 255);
 	test_X("%20X", 255);
 	test_d("%f", 2.5);
+	//test_percent("%-5%", INT32_MAX);
+	test_s("%s abc", "");
 	return (0);
 }
