@@ -6,7 +6,7 @@
 /*   By: wkorande <wkorande@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 19:55:47 by wkorande          #+#    #+#             */
-/*   Updated: 2019/12/02 16:21:59 by wkorande         ###   ########.fr       */
+/*   Updated: 2019/12/02 16:32:12 by wkorande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -211,7 +211,6 @@ int	main(void)
 	test_x("%X", 255);
 	test_X("%20X", 255);
 	test_d("%f", 2.5);
-	//test_percent("%-5%", INT32_MAX);
 	test_s("%s abc", "");
 	return (0);
 }
